@@ -1,0 +1,424 @@
+{
+	"info": {
+		"_postman_id": "1a7a4116-057f-4e7b-965b-834d1a550db6",
+		"name": "AUTOMATIZACIÓN",
+		"description": "Flujo de pruebas automatizadas en OpenCart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29943369"
+	},
+	"item": [
+		{
+			"name": "Registro de usuario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "firstname",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "lastname",
+							"value": "User",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "testuser{{randomInt}}@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "telephone",
+							"value": "1234567890",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Password123",
+							"type": "text"
+						},
+						{
+							"key": "confirm",
+							"value": "Password123",
+							"type": "text"
+						},
+						{
+							"key": "agree",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://opencart.abstracta.us/index.php?route=account/register",
+					"protocol": "https",
+					"host": [
+						"opencart",
+						"abstracta",
+						"us"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "account/register"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "testuser@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Password123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://opencart.abstracta.us/index.php?route=account/login",
+					"protocol": "https",
+					"host": [
+						"opencart",
+						"abstracta",
+						"us"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "account/login"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Restablecimiento de contraseña",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "testuser@mail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://opencart.abstracta.us/index.php?route=account/forgotten",
+					"protocol": "https",
+					"host": [
+						"opencart",
+						"abstracta",
+						"us"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "account/forgotten"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Laptops & Notebooks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://opencart.abstracta.us/index.php?route=product/category&path=18",
+					"protocol": "https",
+					"host": [
+						"opencart",
+						"abstracta",
+						"us"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "product/category"
+						},
+						{
+							"key": "path",
+							"value": "18"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar MacBook Pro al carrito",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "product_id",
+							"value": "46",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://opencart.abstracta.us/index.php?route=checkout/cart/add",
+					"protocol": "https",
+					"host": [
+						"opencart",
+						"abstracta",
+						"us"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "checkout/cart/add"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Samsung Galaxy y agregar al carrito",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "product_id",
+							"value": "49",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://opencart.abstracta.us/index.php?route=checkout/cart/add",
+					"protocol": "https",
+					"host": [
+						"opencart",
+						"abstracta",
+						"us"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "checkout/cart/add"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar MacBook Pro del carrito",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "key",
+							"value": "{{macbook_key}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://opencart.abstracta.us/index.php?route=checkout/cart/remove",
+					"protocol": "https",
+					"host": [
+						"opencart",
+						"abstracta",
+						"us"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "checkout/cart/remove"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar otra unidad de Samsung Galaxy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "key",
+							"value": "{{samsung_key}}",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://opencart.abstracta.us/index.php?route=checkout/cart/edit",
+					"protocol": "https",
+					"host": [
+						"opencart",
+						"abstracta",
+						"us"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "checkout/cart/edit"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Checkout - Confirmar Orden",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "payment_method",
+							"value": "cod",
+							"type": "text"
+						},
+						{
+							"key": "agree",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://opencart.abstracta.us/index.php?route=checkout/confirm",
+					"protocol": "https",
+					"host": [
+						"opencart",
+						"abstracta",
+						"us"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "checkout/confirm"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
